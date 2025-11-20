@@ -1,1 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MindCard — one insight a day</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="theme-color" content="#0b1220" />
+</head>
+<body>
+  <div id="app">
+    <header>
+      <div class="brand">MindCard</div>
+      <div id="progress">
+        <div id="streak">🔥 <span id="streakCount">0</span> day</div>
+        <div id="modeBadge" class="badge">Dark</div>
+      </div>
+    </header>
+
+    <main>
+      <section id="moodRow" class="moodRow">
+        <!-- mood buttons populated by JS -->
+      </section>
+
+      <div id="cardWrap">
+        <div id="card" class="card locked" aria-live="polite">
+          <div class="cardFront">
+            <div id="cardMeta">
+              <div id="dayLabel">Day 1</div>
+              <div id="pathLabel">Path</div>
+            </div>
+            <div class="bigHint">Tap or swipe up to reveal</div>
+          </div>
+          <div class="cardBack">
+            <h1 id="truth">Truth</h1>
+            <p id="interpretation">Interpretation</p>
+            <div class="challenge"><strong>Try (10s):</strong> <span id="challenge">Action</span></div>
+            <div class="cardActions">
+              <button id="reflectBtn">Reflect</button>
+              <button id="timerBtn">Clarity Timer</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="shareBtn">Share Insight</button>
+        <button id="favBtn">❤ Favorite</button>
+      </div>
+
+      <div id="miniProfile" class="miniProfile">
+        <div>Total unlocked: <span id="totalUnlocked">0</span></div>
+        <div>Longest streak: <span id="longestStreak">0</span></div>
+      </div>
+
+    </main>
+
+    <!-- Reflection modal -->
+    <div id="reflectModal" class="modal hidden">
+      <div class="modalInner">
+        <h3>Reflect — one or two lines</h3>
+        <textarea id="reflectionInput" placeholder="Write a short reflection..."></textarea>
+        <div class="modalActions">
+          <button id="saveReflection">Save</button>
+          <button id="closeReflect">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Timer modal -->
+    <div id="timerModal" class="modal hidden">
+      <div class="modalInner">
+        <h3>Clarity Timer</h3>
+        <div id="timerDisplay">30</div>
+        <div class="modalActions">
+          <button id="startTimer">Start</button>
+          <button id="closeTimer">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="toast" class="toast hidden"></div>
+  </div>
+
+  <script src="cards.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
 
