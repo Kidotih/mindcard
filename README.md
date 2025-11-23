@@ -16,3 +16,4 @@
 1. Clone the repository:  
    ```bash
    git clone https://github.com/kidotih/mindcard.git
+more to be improved
